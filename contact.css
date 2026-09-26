@@ -1,0 +1,414 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --bg-color: #0a0a0f;
+    --bg-secondary: #11111a;
+    --card-color: rgba(20, 20, 35, 0.75);
+
+    --text-color: #e0e0e0;
+    --text-muted: #9a9aa8;
+
+    --accent-color: #00d9ff;
+    --accent-secondary: #7a00ff;
+
+    --border-color: rgba(0, 217, 255, 0.35);
+
+    --max-width: 1200px;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Staatliches", Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, rgba(0, 217, 255, 0.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(122, 0, 255, 0.08), transparent 35%),
+        linear-gradient(135deg, #0a0a0f, #11111f, #08080d);
+
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER (identique sur toutes les pages)
+========================= */
+
+header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+
+    background: rgba(10, 10, 15, 0.9);
+
+    border-bottom: 1px solid var(--border-color);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
+}
+
+.site-title {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--accent-color);
+
+    animation: colorChange 6s infinite alternate;
+
+    cursor: default;
+}
+
+@keyframes colorChange {
+    0% { color: #00d9ff; }
+    25% { color: #ff00aa; }
+    50% { color: #7a00ff; }
+    75% { color: #00ff88; }
+    100% { color: #00d9ff; }
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Page actuelle (attribut aria-current="page" sur le lien "Contact") */
+.main-nav a[aria-current="page"] {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+.main-nav a[aria-current="page"]::after {
+    width: 100%;
+}
+
+
+/* =========================
+   CONTENU PRINCIPAL
+========================= */
+
+main {
+    width: min(90%, var(--max-width));
+    margin: auto;
+}
+
+
+/* =========================
+   EN-TÊTE DE LA PAGE
+========================= */
+
+.page-header {
+    padding: 5rem 1rem 2rem;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+}
+
+.page-header h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+
+    text-shadow:
+        0 0 10px rgba(0, 217, 255, 0.4),
+        0 0 30px rgba(0, 217, 255, 0.15);
+}
+
+.page-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: var(--text-muted);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =========================
+   MISE EN PAGE (coordonnées + formulaire)
+========================= */
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 2rem 0 5rem;
+    align-items: start;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   COORDONNÉES
+========================= */
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+.contact-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--accent-color);
+}
+
+.contact-item .icon {
+    font-size: 1.3rem;
+}
+
+
+/* Réseaux sociaux (liens à ajouter par Dave) */
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.social-links a:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   FORMULAIRE DE CONTACT
+========================= */
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-form label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.25);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact-form button[type="submit"] {
+    align-self: flex-start;
+    padding: 0.8rem 2rem;
+
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--accent-color);
+
+    font-family: "Staatliches", Arial, sans-serif;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background: var(--accent-color);
+    color: #050509;
+    transform: translateY(-3px);
+}
+
+.form-note {
+    margin-top: 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav a {
+        font-size: 0.9rem;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .main-nav ul {
+        gap: 0.7rem;
+    }
+}

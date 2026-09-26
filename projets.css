@@ -1,0 +1,413 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --bg-color: #0a0a0f;
+    --bg-secondary: #11111a;
+    --card-color: rgba(20, 20, 35, 0.75);
+
+    --text-color: #e0e0e0;
+    --text-muted: #9a9aa8;
+
+    --accent-color: #00d9ff;
+    --accent-secondary: #7a00ff;
+
+    --border-color: rgba(0, 217, 255, 0.35);
+
+    --max-width: 1200px;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Staatliches", Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top left, rgba(0, 217, 255, 0.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(122, 0, 255, 0.08), transparent 35%),
+        linear-gradient(135deg, #0a0a0f, #11111f, #08080d);
+
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER (identique sur toutes les pages)
+========================= */
+
+header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+
+    background: rgba(10, 10, 15, 0.9);
+
+    border-bottom: 1px solid var(--border-color);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
+}
+
+.site-title {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--accent-color);
+
+    animation: colorChange 6s infinite alternate;
+
+    cursor: default;
+}
+
+@keyframes colorChange {
+    0% { color: #00d9ff; }
+    25% { color: #ff00aa; }
+    50% { color: #7a00ff; }
+    75% { color: #00ff88; }
+    100% { color: #00d9ff; }
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Page actuelle (attribut aria-current="page" sur le lien "Projets") */
+.main-nav a[aria-current="page"] {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+.main-nav a[aria-current="page"]::after {
+    width: 100%;
+}
+
+
+/* =========================
+   CONTENU PRINCIPAL
+========================= */
+
+main {
+    width: min(90%, var(--max-width));
+    margin: auto;
+}
+
+
+/* =========================
+   EN-TÊTE DE LA PAGE
+========================= */
+
+.page-header {
+    padding: 5rem 1rem 2rem;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+}
+
+.page-header h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+
+    text-shadow:
+        0 0 10px rgba(0, 217, 255, 0.4),
+        0 0 30px rgba(0, 217, 255, 0.15);
+}
+
+.page-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: var(--text-muted);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =========================
+   BLOC PLACEHOLDER (image/vidéo à ajouter par Dave)
+========================= */
+
+.media-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 220px;
+    padding: 1.5rem;
+
+    border: 2px dashed var(--border-color);
+    border-radius: 15px;
+    background: rgba(0, 217, 255, 0.03);
+    text-align: center;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.media-placeholder:hover {
+    border-color: var(--accent-color);
+    background: rgba(0, 217, 255, 0.06);
+}
+
+.media-placeholder .icon {
+    font-size: 2rem;
+}
+
+.media-placeholder strong {
+    color: var(--accent-color);
+    font-family: "Staatliches", Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.media-placeholder small {
+    font-family: Arial, sans-serif;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   GRILLE DE PROJETS
+========================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0 4rem;
+}
+
+
+/* =========================
+   CARTE PROJET
+========================= */
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    padding: 1.5rem;
+
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.12);
+}
+
+.project-card h3 {
+    color: var(--accent-color);
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.project-card > p {
+    font-family: Arial, sans-serif;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+
+/* Étiquettes (tags) */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tags span {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--accent-color);
+}
+
+
+/* Liens du projet (PDF à ajouter / lien externe à ajouter) */
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: auto;
+}
+
+.file-placeholder {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+
+    border: 1px dashed var(--text-muted);
+    border-radius: 8px;
+    color: var(--text-muted);
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.file-placeholder:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-fill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    color: var(--accent-color);
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.btn-fill:hover {
+    background: var(--accent-color);
+    color: #050509;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .main-nav ul {
+        gap: 0.7rem;
+    }
+}

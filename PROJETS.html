@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Page "Projets" : vitrine des créations (manga, série, sites web, community management) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projets — Portfolio de Daves</title>
+
+    <link rel="stylesheet" href="projets.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- En-tête avec titre et navigation (identique à index.html) -->
+    <header>
+
+        <h1 class="site-title">SΞKΛ ΛLΞXΛNDRΞ DΛVIS</h1>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="EN-SAVOIR-PLUS.html">À propos</a></li>
+                <li><a href="PROJETS.html" aria-current="page">Projets</a></li>
+                <li><a href="CONTACT.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- Contenu principal -->
+    <main>
+
+        <!-- Titre de la page -->
+        <section class="page-header">
+            <h2>Mes projets</h2>
+            <p>Une sélection de mes créations, entre écriture, développement web et gestion de communauté.</p>
+        </section>
+
+        <!--
+            MODE D'EMPLOI (à supprimer une fois que tu as compris le principe) :
+            - Chaque projet est une <div class="project-card">.
+            - Le bloc "media-placeholder" est à remplacer par une image ou vidéo réelle, par ex :
+                <img src="IMAGE/afue-nyama-cover.jpg" alt="Couverture AFUɛ NYAMA">
+                ou
+                <video src="VIDEOS/demo-projet.mp4" controls></video>
+            - Les liens avec href="#" sont à remplacer par tes vraies URLs ou chemins de fichiers.
+            - Pour ajouter un nouveau projet, copie-colle un bloc <div class="project-card">...</div> entier.
+        -->
+        <section class="project-grid">
+
+            <!-- Projet 1 : AFUɛ NYAMA -->
+            <div class="project-card">
+
+                <div class="media-placeholder">
+                    <span class="icon">🖼️</span>
+                    <strong>Illustration / couverture</strong>
+                    <small>ex : IMAGE/afue-nyama-cover.jpg</small>
+                </div>
+
+                <h3>AFUɛ NYAMA</h3>
+                <p>
+                    Manga dark fantasy shōnen puisant dans les mythologies akan-baoulé, dioula et bambara.
+                    Univers développé sur plusieurs tomes, avec bible narrative et fiches de personnages.
+                </p>
+
+                <div class="project-tags">
+                    <span>Manga</span>
+                    <span>Scénario</span>
+                    <span>Worldbuilding</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" class="file-placeholder">📄 Extrait / bible (PDF)</a>
+                    <a href="#" class="btn-fill">🔗 Voir la présentation</a>
+                </div>
+            </div>
+
+            <!-- Projet 2 : La Dette des Ombres -->
+            <div class="project-card">
+
+                <div class="media-placeholder">
+                    <span class="icon">🎬</span>
+                    <strong>Visuel / bande-annonce</strong>
+                    <small>ex : IMAGE/dette-des-ombres-poster.jpg</small>
+                </div>
+
+                <h3>La Dette des Ombres</h3>
+                <p>
+                    Série télévisée (thriller politique) se déroulant dans une république ouest-africaine
+                    fictive. Bible de série complète et scénario de la saison 1 rédigés.
+                </p>
+
+                <div class="project-tags">
+                    <span>Série TV</span>
+                    <span>Scénario</span>
+                    <span>Thriller politique</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" class="file-placeholder">📄 Bible / script (PDF)</a>
+                    <a href="#" class="btn-fill">🔗 Dossier de présentation</a>
+                </div>
+            </div>
+
+            <!-- Projet 3 : Come Play Here -->
+            <div class="project-card">
+
+                <div class="media-placeholder">
+                    <span class="icon">🖥️</span>
+                    <strong>Capture d'écran du site</strong>
+                    <small>ex : IMAGE/come-play-here-screenshot.jpg</small>
+                </div>
+
+                <h3>Come Play Here</h3>
+                <p>
+                    Site web personnel dédié au gaming : diaporama d'images, vidéos, musique et liens
+                    vers des plateformes de jeux en ligne. Réalisé en HTML/CSS uniquement.
+                </p>
+
+                <div class="project-tags">
+                    <span>Développement web</span>
+                    <span>HTML / CSS</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" class="btn-fill">🔗 Voir le site en ligne</a>
+                    <a href="#" class="file-placeholder">💻 Code source</a>
+                </div>
+            </div>
+
+            <!-- Projet 4 : MYL Pizza And Chicken — Community Management -->
+            <div class="project-card">
+
+                <div class="media-placeholder">
+                    <span class="icon">🎥</span>
+                    <strong>Exemple de contenu TikTok</strong>
+                    <small>ex : VIDEOS/myl-extrait.mp4</small>
+                </div>
+
+                <h3>MYL Pizza And Chicken</h3>
+                <p>
+                    Gestion du compte TikTok d'un restaurant à Abidjan : création de contenu, lives
+                    et stratégie de croissance d'audience.
+                </p>
+
+                <div class="project-tags">
+                    <span>Community management</span>
+                    <span>TikTok</span>
+                    <span>Vidéo</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" class="btn-fill">🔗 Voir le compte TikTok</a>
+                </div>
+            </div>
+
+            <!-- Ajoute ici de nouveaux <div class="project-card"> pour tes futurs projets -->
+
+        </section>
+
+    </main>
+
+
+    <!-- Pied de page -->
+    <footer>
+
+        <p>&copy; 2026 Daves — Tous droits réservés</p>
+
+    </footer>
+
+</body>
+
+</html>

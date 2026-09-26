@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Page "Contact" : coordonnées, réseaux sociaux et formulaire de message -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact — Portfolio de Daves</title>
+
+    <link rel="stylesheet" href="contact.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- En-tête avec titre et navigation (identique à index.html) -->
+    <header>
+
+        <h1 class="site-title">SΞKΛ ΛLΞXΛNDRΞ DΛVIS</h1>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="EN-SAVOIR-PLUS.html">À propos</a></li>
+                <li><a href="PROJETS.html">Projets</a></li>
+                <li><a href="CONTACT.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- Contenu principal -->
+    <main>
+
+        <!-- Titre de la page -->
+        <section class="page-header">
+            <h2>Me contacter</h2>
+            <p>Une question, une collaboration, un projet à discuter ? N'hésite pas à me joindre.</p>
+        </section>
+
+        <section class="contact-wrapper">
+
+            <!-- Coordonnées et réseaux -->
+            <div class="contact-info">
+
+                <h3>Coordonnées</h3>
+
+                <div class="contact-details">
+                    <!-- Remplace par ta vraie adresse email -->
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        <a href="mailto:ton-email@example.com">ton-email@example.com</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <span>Abidjan, Côte d'Ivoire</span>
+                    </div>
+
+                    <!-- Optionnel : décommente et complète si tu veux partager un numéro -->
+                    <!--
+                    <div class="contact-item">
+                        <span class="icon">📞</span>
+                        <span>+225 00 00 00 00 00</span>
+                    </div>
+                    -->
+                </div>
+
+                <h3>Réseaux & liens</h3>
+
+                <div class="social-links">
+                    <!-- Remplace chaque href="#" par ton lien réel ; retire les lignes que tu n'utilises pas -->
+                    <a href="#">💼 LinkedIn</a>
+                    <a href="#">💻 GitHub</a>
+                    <a href="#">🎨 Behance</a>
+                    <a href="#">🎵 TikTok</a>
+                    <a href="#">📷 Instagram</a>
+                </div>
+
+            </div>
+
+            <!-- Formulaire de contact -->
+            <div class="contact-form">
+
+                <h3>Envoyer un message</h3>
+
+                <!--
+                    IMPORTANT : un site 100% HTML/CSS ne peut pas envoyer d'e-mail par lui-même.
+                    Ce formulaire est prêt visuellement ; pour qu'il fonctionne réellement, deux options :
+                    1) Remplace l'attribut action ci-dessous par l'URL fournie par un service gratuit
+                       comme Formspree (https://formspree.io) ou Web3Forms.
+                    2) En attendant, utilise simplement le lien e-mail ci-contre.
+                -->
+                <form action="#" method="POST">
+
+                    <div>
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Ton nom" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="ton-email@example.com" required>
+                    </div>
+
+                    <div>
+                        <label for="sujet">Sujet</label>
+                        <input type="text" id="sujet" name="sujet" placeholder="Objet du message">
+                    </div>
+
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Ton message..." required></textarea>
+                    </div>
+
+                    <button type="submit">Envoyer</button>
+
+                </form>
+
+                <p class="form-note">
+                    Ce formulaire nécessite un service externe (ex : Formspree) pour fonctionner sans backend.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Pied de page -->
+    <footer>
+
+        <p>&copy; 2026 Daves — Tous droits réservés</p>
+
+    </footer>
+
+</body>
+
+</html>
