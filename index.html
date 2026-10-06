@@ -1,120 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <!-- Première version du portfolio : structure de base -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Portfolio de Daves</title>
-
-    <link rel="stylesheet" href="daves.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio de Daves</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cyber.css">
 </head>
-
 <body>
+<div id="boot"><pre></pre></div>
+<canvas id="rain"></canvas>
+<div id="cur"></div>
 
-    <!-- En-tête avec titre et navigation -->
-    <header>
+<header>
+  <a href="index.html" class="logo">SAD_</a>
+  <nav class="main-nav"><ul>
+    <li><a href="index.html" aria-current="page">Accueil</a></li>
+    <li><a href="EN-SAVOIR-PLUS.html">À propos</a></li>
+    <li><a href="PROJETS.html">Projets</a></li>
+    <li><a href="CONTACT.html">Contact</a></li>
+  </ul></nav>
+  <div class="hd-right">
+    <div class="sys">SYS_TIME<br><b id="clock">--:--:--</b><br>UTC+0</div>
+    <a class="btn" href="CONTACT.html">Démarrer un projet ↗</a>
+  </div>
+</header>
 
-        <h1 class="site-title">SΞKΛ ΛLΞXΛNDRΞ DΛVIS</h1>
+<main>
+  <section class="sec hero">
+    <div class="hero-l">
+      <h2><span class="glitch" data-t="SEKA ALEXANDRE">SEKA ALEXANDRE</span><br><span class="glitch" data-t="DAVIS">DAVIS</span></h2>
+      <p class="tagline" data-type="Cybersécurité. IA. Création. Le futur n'est pas minimal."><span></span></p>
+      <p>Étudiant en <strong class="lime">Cybersécurité & Intelligence Artificielle</strong>, scénariste, musicien et créateur. Ce site est ma bibliothèque personnelle : ce que j'apprends, ce que je crée, ce que je deviens.</p>
+      <div class="hero-btns">
+        <a class="btn" href="PROJETS.html">Voir mes projets ↗</a>
+        <a class="btn ghost" href="EN-SAVOIR-PLUS.html">En savoir plus ⌗</a>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="scan">
+        <img class="p-base" src="IMAGE/1 (1).png" alt="Portrait de Daves">
+        <div class="mesh"></div><div class="beam"></div>
+        <div class="blk k1"></div><div class="blk k2"></div><div class="blk k3"></div>
+        <span class="tag t1">&gt;RENDERING... <b data-count>0</b>%</span>
+        <div class="coords">X_<i>36.1749</i><br>Y_<i>-86.7676</i><br>Z_<i>46.6827</i></div>
+        <span class="tag t2">//SCN_01</span>
+      </div>
+    </div>
+  </section>
 
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="EN-SAVOIR-PLUS.html">À propos</a></li>
-                <li><a href="PROJETS.html">Projets</a></li>
-                <li><a href="CONTACT.html">Contact</a></li>
-            </ul>
-        </nav>
+  <section class="sec rv">
+    <div class="lbl"><i>/02</i>MES DOMAINES</div>
+    <div class="cards">
+      <div class="card"><span class="ic">🛡️</span><h3>Cybersécurité</h3><p>Découverte de la sécurité informatique et des réseaux.</p></div>
+      <div class="card"><span class="ic">⌨️</span><h3>Développement</h3><p>Création de sites web et apprentissage de la programmation.</p></div>
+      <div class="card"><span class="ic">🧠</span><h3>Intelligence artificielle</h3><p>Exploration de l'IA et de ses possibilités.</p></div>
+      <div class="card"><span class="ic">🎬</span><h3>Création</h3><p>Musique, manga, écriture et autres projets personnels.</p></div>
+    </div>
+  </section>
 
-    </header>
+  <section class="sec status rv" style="padding:0">
+    <div><div class="lbl"><i>/03</i>REJOINDRE L'AVENTURE</div><h3 style="font-size:1.8rem;margin-bottom:.8rem">Un projet ? Construisons-le.</h3><a class="btn" href="CONTACT.html">Let's build ↗</a></div>
+    <div>
+      <div class="lbl"><i>/04</i>STATUT SYSTÈME</div>
+      <div class="row"><b>CYBERSEC</b><div class="bar"><i data-w="60"></i></div><em>60%</em></div>
+      <div class="row"><b>IA</b><div class="bar"><i data-w="45"></i></div><em>45%</em></div>
+      <div class="row"><b>CRÉATION</b><div class="bar"><i data-w="90"></i></div><em>90%</em></div>
+      <span class="ok">ALL SYSTEMS OPERATIONAL</span>
+    </div>
+  </section>
 
+  <div class="ticker"><span>CYBERSÉCURITÉ ✦ IA ✦ MANGA ✦ SCÉNARIO ✦ MUSIQUE ✦ WEB ✦ CYBERSÉCURITÉ ✦ IA ✦ MANGA ✦ SCÉNARIO ✦ MUSIQUE ✦ WEB ✦ </span></div>
+</main>
 
-    <!-- Contenu principal -->
-    <main>
-
-        <!-- Section principale -->
-        <section class="hero">
-
-            <h2>Bienvenue dans mon univers</h2>
-            <!-- Image -->
-            <section class="image">
-
-                <img src="IMAGE/1 (1).png" alt="Portrait de Daves">
-
-            </section>
-            <p>
-                Je suis étudiant en
-                <strong>Cybersécurité & Intelligence Artificielle</strong>,
-                passionné par l'informatique et la création.
-            </p>
-
-            <p>
-                Entre développement, cybersécurité, intelligence artificielle,
-                musique, manga et écriture, je construis progressivement
-                mes propres projets et j'explore de nouvelles idées.
-            </p>
-
-            <p>
-                Ce site est ma bibliothèque personnelle :
-                un espace où je rassemble ce que j'apprends,
-                ce que je crée et ce que je deviens.
-            </p>
-
-            <!-- Boutons de navigation -->
-            <div class="hero-buttons">
-                <a href="PROJETS.html">Voir mes projets</a>
-                <a href="EN-SAVOIR-PLUS.html">En savoir plus</a>
-            </div>
-
-        </section>
-
-        <!-- Domaines -->
-        <section class="domains">
-
-            <h2>Mes domaines</h2>
-
-            <div class="domain-list">
-
-                <div class="domain">
-                    <h3>Cybersécurité</h3>
-                    <p>Découverte de la sécurité informatique et des réseaux.</p>
-                </div>
-
-                <div class="domain">
-                    <h3>Développement</h3>
-                    <p>Création de sites web et apprentissage de la programmation.</p>
-                </div>
-
-                <div class="domain">
-                    <h3>Intelligence artificielle</h3>
-                    <p>Exploration de l'IA et de ses possibilités.</p>
-                </div>
-
-                <div class="domain">
-                    <h3>Création</h3>
-                    <p>Musique, manga, écriture et autres projets personnels.</p>
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- Pied de page -->
-    <footer>
-
-        <p>&copy; 2026 Daves — Tous droits réservés</p>
-
-    </footer>
-
+<footer>&copy; 2026 Daves — Tous droits réservés &nbsp;//&nbsp; ACCESS GRANTED_</footer>
+<script src="cyber.js"></script>
 </body>
-
 </html>

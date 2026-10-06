@@ -1,163 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <!-- Page "À propos" : présentation personnelle, parcours et compétences -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>À propos — Portfolio de Daves</title>
-
-    <link rel="stylesheet" href="apropos.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — Portfolio de Daves</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cyber.css">
 </head>
-
 <body>
+<div id="boot"><pre></pre></div>
+<canvas id="rain"></canvas>
+<div id="cur"></div>
 
-    <!-- En-tête avec titre et navigation (identique à index.html) -->
-    <header>
+<header>
+  <a href="index.html" class="logo">SAD_</a>
+  <nav class="main-nav"><ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="EN-SAVOIR-PLUS.html" aria-current="page">À propos</a></li>
+    <li><a href="PROJETS.html">Projets</a></li>
+    <li><a href="CONTACT.html">Contact</a></li>
+  </ul></nav>
+  <div class="hd-right">
+    <div class="sys">SYS_TIME<br><b id="clock">--:--:--</b><br>UTC+0</div>
+    <a class="btn" href="CONTACT.html">Démarrer un projet ↗</a>
+  </div>
+</header>
 
-        <h1 class="site-title">SΞKΛ ΛLΞXΛNDRΞ DΛVIS</h1>
+<main>
+  <section class="sec">
+    <div class="lbl"><i>/01</i>À PROPOS</div>
+    <h2 style="font-size:clamp(2.4rem,6vw,4.5rem)" class="glitch" data-t="À PROPOS DE MOI">À PROPOS DE MOI</h2>
+    <p class="mut tagline" data-type="Étudiant, scénariste et créateur."><span></span></p>
+  </section>
 
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="EN-SAVOIR-PLUS.html" aria-current="page">À propos</a></li>
-                <li><a href="PROJETS.html">Projets</a></li>
-                <li><a href="CONTACT.html">Contact</a></li>
-            </ul>
-        </nav>
+  <section class="sec about rv">
+    <div class="scan">
+      <img class="p-base" src="IMAGE/1 (2).png" alt="Portrait de Davis">
+      <div class="mesh"></div><div class="beam"></div>
+      <div class="blk k1"></div><div class="blk k2"></div><div class="blk k3"></div>
+      <span class="tag t1">&gt;IDENTITY... <b data-count>0</b>%</span>
+      <div class="coords">X_<i>36.1749</i><br>Y_<i>-86.7676</i><br>Z_<i>46.6827</i></div>
+      <span class="tag t2">//SCN_02</span>
+    </div>
+    <div>
+      <p>Je m'appelle Seka Alexandre Davis, étudiant en <strong>Cybersécurité et IA</strong> à IISAN (Abidjan). Passionné d'informatique, je me spécialise progressivement vers la <strong>cybersécurité</strong> et l'<strong>intelligence artificielle</strong>, avec pour but d'être <strong>DSI</strong> (Directeur des Systèmes d'Information) / <strong>RSSI</strong> (Responsable de la Sécurité des Systèmes d'Information).</p>
+      <p>En parallèle de mes études, je suis aussi scénariste, auteur créatif et musicien : j'écris des univers de fiction (manga, séries), je compose des songs et j'accompagne des marques locales dans leur communication sur les réseaux sociaux.</p>
+      <p>Ce site rassemble mes projets techniques et créatifs, à mesure que je les développe.</p>
+    </div>
+  </section>
 
-    </header>
+  <section class="sec rv">
+    <div class="lbl"><i>/02</i>MON PARCOURS</div>
+    <div class="tl"><small>Formation</small><h3>Cybersécurité et IA — IISAN, Abidjan</h3><p>Formation technique en informatique, avec une orientation croissante vers la cybersécurité et l'intelligence artificielle.</p></div>
+    <div class="tl"><small>Objectif</small><h3>DSI / RSSI — Carrière d'artiste</h3><p>Mon rêve dans l'informatique et la cybersécurité est d'être DSI/RSSI, mais je chéris aussi celui d'être artiste chanteur, scénariste ou auteur du premier manga africain basé sur la mythologie africaine et connu à l'international.</p></div>
+    <div class="tl"><small>Création</small><h3>Artiste chanteur, scénariste & auteur créatif</h3><p>Développement de projets narratifs (manga, séries télévisées), création de songs (Afrobeat, Rap et bien d'autres) et gestion de communauté pour des marques locales.</p></div>
+  </section>
 
+  <section class="sec rv">
+    <div class="lbl"><i>/03</i>MES COMPÉTENCES</div>
+    <div class="bars">
+      <div><span>Électronique<em>—</em></span><div class="bar"><i data-w="75"></i></div></div>
+      <div><span>HTML / CSS<em>—</em></span><div class="bar"><i data-w="65"></i></div></div>
+      <div><span>Cybersécurité (bases)<em>—</em></span><div class="bar"><i data-w="45"></i></div></div>
+      <div><span>Écriture de scénario<em>—</em></span><div class="bar"><i data-w="90"></i></div></div>
+      <div><span>Community management<em>—</em></span><div class="bar"><i data-w="70"></i></div></div>
+      <div><span>Montage vidéo / Création musicale<em>—</em></span><div class="bar"><i data-w="65"></i></div></div>
+    </div>
+    <!-- Ajuste les valeurs data-w (0 à 100) selon ton niveau réel -->
+  </section>
 
-    <!-- Contenu principal -->
-    <main>
+  <section class="sec rv">
+    <div class="lbl"><i>/04</i>MES DOCUMENTS</div>
+    <div class="links">
+      <!-- Remplace href="#" par le chemin réel, ex : DOCS/CV-Dave-Seka.pdf -->
+      <a href="#" class="btn dash">📄 Ajoute ton CV ici (PDF)</a>
+      <a href="#" class="btn dash">🎥 Vidéo de présentation (optionnelle)</a>
+    </div>
+  </section>
 
-        <!-- Titre de la page -->
-        <section class="page-header">
-            <h2>À propos de moi</h2>
-            <p>Étudiant, scénariste et créateur — voici mon parcours et ce qui m'anime.</p>
-        </section>
+  <div class="ticker"><span>DSI ✦ RSSI ✦ CYBERSÉCURITÉ ✦ IA ✦ SCÉNARIO ✦ MUSIQUE ✦ DSI ✦ RSSI ✦ CYBERSÉCURITÉ ✦ IA ✦ SCÉNARIO ✦ MUSIQUE ✦ </span></div>
+</main>
 
-        <!-- Présentation : photo + texte -->
-        <section class="about-grid">
-
-            <!--
-                EMPLACEMENT PHOTO
-                Remplace tout le bloc <div class="media-placeholder">...</div> ci-dessous par :
-                <img src="IMAGE/ta-photo.jpg" alt="Portrait de Dave" class="about-photo">
-                (garde le dossier IMAGE/ déjà utilisé sur ta page d'accueil)
-            -->
-            <img src="IMAGE/1 (2).png" alt="davis" class="about-photo">
-
-            <div class="about-text">
-                <!-- Texte d'exemple : modifie-le librement selon ta propre présentation -->
-                <p>
-                    Je m'appelle Seka Alexandre Davis, étudiant en <strong>Cybersécurité Et IA</strong>
-                    à IISAN (Abidjan). Passionné d'informatique, je me spécialise progressivement
-                    vers la <strong>cybersécurité</strong> et l'<strong>intelligence artificielle</strong>,
-                    avec pour bute d'etre <strong>DSI( Directeur de Systeme Informatique ) / </strong><strong>RSSI( Responsable de Systeme de Securité et Informatique )</strong>.
-                </p>
-                <p>
-                    En parallèle de mes études, je suis aussi scénariste et auteur créatif et musicien :
-                    j'écris des univers de fiction (manga, séries) , je compose aussi des songs  et j'accompagne des marques locales
-                    dans leur communication sur les réseaux sociaux.
-                </p>
-                <p>
-                    Ce site rassemble mes projets techniques et créatifs, à mesure que je les développe.
-                </p>
-            </div>
-
-        </section>
-
-        <!-- Parcours -->
-        <section class="domains">
-            <h2>Mon parcours</h2>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="timeline-year">Formation</div>
-                    <div class="timeline-content">
-                        <h3>Cybersécurité et IA — IISAN, Abidjan</h3>
-                        <p>Formation technique en informatique, avec une orientation croissante vers
-                        , la cybersécurité et l'intelligence artificielle.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-year">Objectif</div>
-                    <div class="timeline-content">
-                        <h3>DSI / RSS - Carriere D'artiste</h3>
-                        <p>Mon reve dans le millieu de l'informatique et de la cybersécurité est d'etre DSI/RSSI
-                            mais je chérie aussi d'autre reve comme celui d'etre artiste chanteur , scenariste ou
-                            auteurs du premier manga africain basé sur la mythologie africaine qui seras connus 
-                            a l'international  .</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-year">Création</div>
-                    <div class="timeline-content">
-                        <h3>Artiste Chanteur, Scénariste & auteur créatif</h3>
-                        <p>Développement de projets narratifs (manga, séries télévisées) , creation de song du style 
-                            AfroBeat, Rap , et bien d'autres et gestion de communauté pour des marques locales.</p>
-                            
-                    </div>
-                </div>
-
-                <!-- Ajoute d'autres <div class="timeline-item"> pour compléter ton parcours (stages, certifications, etc.) -->
-
-            </div>
-        </section>
-
-        <!-- Compétences -->
-        <section class="domains">
-            <h2>Mes compétences</h2>
-
-            <div class="project-tags" style="justify-content: center;">
-                <span>Électronique</span>
-                <span>HTML / CSS</span>
-                <span>Cybersécurité (bases)</span>
-                <span>Écriture de scénario</span>
-                <span>Community management</span>
-                <span>Montage vidéo</span>
-                <span>Creation De Musique</span>
-                <!-- Ajoute ou retire des <span> selon tes compétences réelles -->
-            </div>
-        </section>
-
-        <!-- Documents à télécharger -->
-        <section class="domains">
-            <h2>Mes documents</h2>
-
-            <div class="hero-buttons">
-                <!--
-                    EMPLACEMENT CV (PDF)
-                    Remplace href="#" par le chemin réel de ton fichier, ex : href="DOCS/CV-Dave-Seka.pdf"
-                -->
-                <a href="#" class="file-placeholder">📄 Ajoute ton CV ici (PDF)</a>
-
-                <!-- Optionnel : vidéo de présentation -->
-                <a href="#" class="file-placeholder">🎥 Vidéo de présentation (optionnelle)</a>
-            </div>
-        </section>
-
-    </main>
-
-
-    <!-- Pied de page -->
-    <footer>
-
-        <p>&copy; 2026 Daves — Tous droits réservés</p>
-
-    </footer>
-
+<footer>&copy; 2026 Daves — Tous droits réservés &nbsp;//&nbsp; ACCESS GRANTED_</footer>
+<script src="cyber.js"></script>
 </body>
-
 </html>
