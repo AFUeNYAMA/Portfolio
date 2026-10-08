@@ -61,4 +61,21 @@ if(cur&&matchMedia('(hover:hover)').matches){
   addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
   $('a,button,.card').forEach(e=>{e.addEventListener('mouseenter',()=>cur.classList.add('h'));e.addEventListener('mouseleave',()=>cur.classList.remove('h'))});
 }
+
+// 8. Formulaire de contact via WhatsApp
+const whatsappForm=document.getElementById('whatsapp-form');
+if(whatsappForm){
+  whatsappForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    const formData=new FormData(whatsappForm);
+    const message=[
+      `Bonjour, je m'appelle ${formData.get('nom')}.`,
+      `Mon email : ${formData.get('email')}.`,
+      `Sujet : ${formData.get('sujet')||'Non précisé'}.`,
+      '',
+      `Message : ${formData.get('message')}`
+    ].join('\n');
+    window.location.href=`https://wa.me/2250757608396?text=${encodeURIComponent(message)}`;
+  });
+}
 })();
